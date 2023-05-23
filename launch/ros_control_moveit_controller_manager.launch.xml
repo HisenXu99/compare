@@ -1,11 +1,8 @@
 <launch>
 	<!-- Define MoveIt controller manager plugin -->
-	<!-- <arg name="moveit_controller_manager" default="moveit_ros_control_interface::MoveItControllerManager" />   
-	<param name="moveit_controller_manager" value="$(arg moveit_controller_manager)"/>  -->
-	<!-- <param name="moveit_controller_manager" value="moveit_ros_control_interface::MoveItControllerManager" /> -->
-	<param name="moveit_controller_manager" value="moveit_simple_controller_manager/MoveItSimpleControllerManager" />
-	
-	<!-- Load controller list to the parameter server -->   
-	<rosparam file="$(find cr5_ag95_moveit_config)/config/moveit_controllers.yaml" />
-	<param name="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" value="123" />
+	<param name="moveit_controller_manager" value="moveit_ros_control_interface::MoveItControllerManager" />
+
+	  <!--load controller_list-->   
+	  <rosparam file="$(find cr5_ag95_moveit_config)/config/controllers.yaml"/>
+	  <param name="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" value="123" />
 </launch>

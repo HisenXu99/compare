@@ -26,7 +26,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx:
   XXXXXXXXXXXXXXX: 123
 
 
-  
+
 controller_list:
   - name: cr5_robot/joint_controller
     action_ns: follow_joint_trajectory
@@ -45,18 +45,3 @@ controller_list:
     default: True
     joints:
       - gripper_finger1_joint
-
-
-# controller_list:
-# #这里name: follow_joint_trajectory改成name: /cr5_robot/joint_controller
-#   - name: /cr5_robot/joint_controller
-#     action_ns: follow_joint_trajectory
-#     default: True
-#     type: FollowJointTrajectory
-#     joints:
-#       - joint1
-#       - joint2
-#       - joint3
-#       - joint4
-#       - joint5
-#       - joint6

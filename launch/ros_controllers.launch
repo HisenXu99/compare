@@ -2,16 +2,18 @@
 <launch>
 
   <!-- Load joint controller configurations from YAML file to parameter server -->
-  <rosparam file="$(find cr5_ag95_moveit_config)/config/ros_controllers.yaml" command="load"/>
+  <rosparam file="$(find cr5_ag95_moveit_config)/config/cr5_moveit_controllers.yaml" command="load"/>
 
   <!-- Load the controllers -->
-  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" 
-    ns="/cr5_robot" output="screen" args="
-    joint_controller 
-    gripper_controller "/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/cr5_robot" args="
+gripper_controller
+joint_controller
+joint_state_controller"/>
 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">     	
     <param name="/use_gui" value="false"/>     	
     <rosparam param="/source_list">[/joint_states]</rosparam>   
   </node> 
+
 </launch>
